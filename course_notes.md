@@ -1,0 +1,150 @@
+Github course
+
+- Glossary
+  - Repository
+  - Version Control
+  - Git
+  - Branch
+  - Tag
+  - Markdown
+  - Push/Pull
+  - Deploy
+  - Commit
+  - Issue
+  - Wiki
+  - Collaborator
+- WhoAmI?
+  - Nate Allen
+  - Co-Founder and CTO at Dev Copilot
+  - Degree in Philosophy
+  - Self taught coder
+  - Before my current role I made video games, and visualized data
+  - Startup Weekend Facilitator
+- Background
+  - What is Version Control?
+  - How does Git control versions?
+    - Distributed version control
+      - You clone the entire repository, and it lives on it's own in your machine. There's no locking of files or "checking out"
+      - Practically speaking, the "origin" is the authority
+    - Git is powerful, git is not easy
+      - Things that seemed to work before suddenly don't. And Git is not very helpful in fixing these things
+  - What is Github?
+    - Github is a place to host your git repository
+    - Github is built for collaboration, public and private
+- Get up and running
+  - Installing Git
+    - Mac
+      - Install Homebrew: http://brew.sh/
+      - Install Git: brew install git
+    - Windows
+      - https://git-scm.herokuapp.com/downloads
+  - Setting up Github
+    - Sign up for an account
+      - https://github.com/join
+    - Create and link your SSH key
+      - https://help.github.com/articles/generating-ssh-keys/
+    - Create or find a repo
+    - Clone the repo to your local machine
+- Uses
+  - Git
+    - Some Terms
+      - Repository
+        - Where all of the code and code versions are held
+      - Commit
+        - Practically: a version of code
+        - Technically: a changeset
+        - Has an identifier. Referred to as the SHA
+      - Branch
+        - A set of commits
+      - Merge
+        - Bringing commits from one branch into another
+    - Git-Flow
+      - Git Flow is a pattern for using Git
+      - Master branch
+        - A history of your code.
+        - Keeps versions all day long, but what if you want to commit changes that aren't ready? And you should commit changes that aren't ready.
+      - Develop Branch
+        - git checkout -b develop
+        - Is a place for you to put code that is mostly ready to go, but probably has some bugs.
+        - Works great for keeping versions of buggy code.
+        - What if you're working with others?
+      - Features branches
+        - git checkout -b a-new-hope
+        - A place for you to work on a self contained feature
+        - What if develop isn't ready to go to production?
+      - Release
+        - git checkout develop
+        - git checkout -b release-1.3
+        - Release branches are meant for only bug fixes
+        - What if you have a bug that made it to production?
+      - Hotfix branches
+        - You can branch off of master, make a small change, and merge back in
+      - http://nvie.com/posts/a-successful-git-branching-model/
+    - Merge Conflicts
+      - If you change the same line on two different branches, you will get a merge conflict
+      - They're not easy to resolve. I recommend getting a tool. I use diffmerge because it's free, but it's not the best.
+    - Other handy things
+      - Reset
+        - Made changes to master that should have been on develop
+        - git reset HEAD~1 --hard
+        - git reset a4897fb2 --hard
+      - cherry-pick
+        - Allows you to merge in a single commit instead of a branch
+      - How big should a commit be?
+        - Smaller than yo
+    - Common Error messages
+      - Can't push
+      - Can't checkout
+  - Github
+    - Teach yourself code
+      - Find a project written in the language or framework you want to get better at
+    - Deal with bad documentation
+      - Dig into the code to see how it works
+    - Find a library, framework or tool that solves a problem for you
+    - Join an open source project
+    - Hosting with Github Pages
+      - https://guides.github.com/features/pages/
+    - Team
+      - Creating your team
+        - Collaborators
+          - You have control over the level of access of your collaborators
+          - In public repositories
+      - Bug reporting
+        - Issues
+          - Flexible
+          - Usually used for tracking bugs and/or features
+      - Code reviews
+        - Pull Requests
+          - A way for collaborators on a project to review a large chunk of code that's been written before merging
+          - Steps in a Pull request
+            - Make some commits on a branch or on a fork
+            - Push your commits to github
+            - Go to the origin repository, and initiate a pull request
+            - Others can now review your code and approve your pull request
+            - When the pull request is approved, it will be merged
+      - History
+        - Commit history
+          - Simple view showing who has committed and when
+          - You can also look at the details of any individual commit
+        - Blame
+          - When looking at a file, see who committed that line
+        - Diff
+      - Documentation (Markdown)
+        - Github will render many different formats, but markdown is the most common
+        - The Readme.md file in any folder will be displayed when you navigate there
+- Resources
+  - Git-Flow: http://nvie.com/posts/a-successful-git-branching-model/
+  - Git Guides: https://guides.github.com/
+    - Issues: https://guides.github.com/features/issues/
+    - Markdown: https://guides.github.com/features/mastering-markdown/
+  - DiffMerge: https://sourcegear.com/diffmerge/
+    - Setting up DiffMerge with Git
+      - Windows: https://gist.github.com/mkchandler/2377564
+      - Mac: http://twobitlabs.com/2011/08/install-diffmerge-git-mac-os-x/
+  - GUI tools
+    - Gitx (L) (Mac only): http://gitx.laullon.com/
+    - Github for Mac: https://mac.github.com/
+    - Github for Windows: https://windows.github.com/
+  - Command Line improvements
+    - Z-shell
+    - https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
